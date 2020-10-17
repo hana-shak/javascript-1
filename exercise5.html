@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #5: Input check</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        .err {
+            color: red;
+            font-size: 0.7em;
+        }
+        
+    </style>
+
+    <script> 
+    //validation
+      function lenCheck () { 
+          //document.getElementById('submitBtn').style.display="hidden";
+          var p1 = document.getElementById('password1').value;
+          var p2 = document.getElementById('password2').value;
+          var res = document.getElementById('submitBtn').value;
+
+          if (p1.length != 6){
+            document.getElementById('pw2_check').innerHTML = "";
+            document.getElementById('pw1_check').innerHTML = "Not rquired length";
+          } 
+          else if (p1 !== p2) {
+            document.getElementById('pw1_check').innerHTML = "";
+            document.getElementById('pw2_check').innerHTML = "Not matched";
+
+          }
+          else {
+            document.getElementById('pw1_check').innerHTML = "";
+            document.getElementById('pw2_check').innerHTML = "";
+            document.getElementById('submitBtn').style.visibility="visible"; 
+          }
+                    
+      }   
+      //MUST REPEAT THIS SOLUTION USING ENTER KEY CODE (more profissional)
+      
+    </script>
+</head>
+<body>
+
+<form name="pw" >
+    <table>
+        <tr>
+            <td>Password (min 6 characters):</td>
+            <td><input type="password" name="password1" id="password1" size="10" placeholder="Password" onkeyup="lenCheck()"  return="false"> </td>
+            <td>
+                <div id="pw1_check" class="err"></div>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>Repeat password:</td>
+            <td><input type="password" name="password2" id="password2" size="10" placeholder="Password"  onkeyup="lenCheck()"   return="false"></td>
+            <td>
+                <div id="pw2_check" class="err"></div>
+            </td>
+            
+        </tr>
+    </table>
+
+    <input type="submit" value="Submit" id="submitBtn" style="visibility:hidden" onkeyup="lenCheck()">
+</form>
+
+</body>
+</html>
+

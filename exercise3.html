@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #2: Changing colors</title>
+    <style>
+        #mydiv {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+   
+        <script>
+            var x = document.getElementById('mydiv');
+            
+
+              
+    function random_bg_color() {
+    var c = document.getElementById('mydiv');
+    var x = Math.floor(Math.random() * 256);
+    var y = Math.floor(Math.random() * 256);
+    var z = Math.floor(Math.random() * 256);
+    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+ console.log(bgColor);
+  
+    c.style.background = bgColor;
+    }
+
+random_bg_color();
+           
+
+        </script>
+ 
+</head>
+<body >
+<div id="mydiv"  onclick="random_bg_color()" ></div>
+</body>
+
+
+</html>
